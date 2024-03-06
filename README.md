@@ -15,6 +15,7 @@
   # Result
 - Output for File: Input_01.txt :
 <img width="253" alt="Screenshot 2024-03-06 093510" src="https://github.com/beinghuman24/Word-Composition-Problem-/assets/128249673/1af6767d-51e7-4ea6-acab-4ed7344647b2">
+
 - Output for File: Input_02.txt :
 <img width="343" alt="Screenshot 2024-03-06 093444" src="https://github.com/beinghuman24/Word-Composition-Problem-/assets/128249673/411116ca-1276-4947-bfe6-05d3a452ef70">
 
