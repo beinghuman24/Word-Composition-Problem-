@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <deque>
-#include <unordered_map>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
@@ -70,7 +65,7 @@ public:
 class Solution {
 private:
     Trie trie;
-    deque<pair<string, string>> queue;
+    deque<pair<string, string>>q;
  
 public:
 
@@ -86,7 +81,7 @@ public:
             string word =line;
             vector<string> prefixes = trie.getPrefixes(word);
             for (string& prefix : prefixes) {
-                queue.push_back({word, word.substr(prefix.length())});
+                q.push_back({word, word.substr(prefix.length())});
             }
             trie.insert(word);
         }
@@ -95,22 +90,22 @@ public:
     pair<string, string> findLongestCompoundWords() {
         string longest_word;
         string second_longest;
-        size_t longest_length = 0;
+        size_t max_len = 0;
 
-        while (!queue.empty()) {
-            pair<string,string>p= queue.front();
+        while (!q.empty()) {
+            pair<string,string>p= q.front();
             string word=p.first;
             string suff=p.second;
-            queue.pop_front();
-            if (trie.consist(suff) && word.size() > longest_length){
+            q.pop_front();
+            if (trie.consist(suff) && word.size() > max_len){
                 second_longest = longest_word;
                 longest_word = word;
-                longest_length = word.size();
+                max_len = word.size();
             } 
             else {
                 auto prefixes = trie.getPrefixes(suff);
                 for ( auto& pre : prefixes) {
-                    queue.push_back(make_pair(word, suff.substr(pre.size())));
+                    q.push_back(make_pair(word, suff.substr(pre.size())));
                 }
             }
         }   
@@ -121,7 +116,7 @@ public:
 int main() {
     Solution sol;
     auto start = std::chrono::steady_clock::now();
-    sol.buildTrie("Input_02.txt");
+    sol.buildTrie("Input_01.txt");
     auto p=sol.findLongestCompoundWords();
      string first=p.first;
      string second=p.second;
