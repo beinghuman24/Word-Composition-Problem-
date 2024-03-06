@@ -9,7 +9,7 @@
 - TrieNode class represents a node in the trie data structure that contains an unordered map to store child nodes and a boolean flag(end) to indicate if the current node represents the end of a word.
 - Solution class contains the main logic of the program. It has a Trie object and a deque of pairs to store (word-suffix) pairs. It includes methods to build the trie from a file containing words and to find the longest and second-longest compound words.
 - Repeat untill the queue is empty, POP the <word,suffix> pairs from the dequeue.
-  *Check if the suffix of the word contains any valid word i.e. prefix from the trie and if length (word) > max_length , set second longest = longest , longest = word and max_length = length(word).
+  * Check if the suffix of the word contains any valid word i.e. prefix from the trie and if length (word) > max_length , set second longest = longest , longest = word and max_length = length(word).
   * Else get all the prefixes of the current suffix of the word , and find the new suffixes w.r.t each and every prefix length. Append the new <word,suffix> pairs into the deque.
 - This returns the longest and second longest words from the file.
   # Result
