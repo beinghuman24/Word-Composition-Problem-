@@ -116,7 +116,7 @@ public:
 int main() {
     Solution sol;
     auto start = std::chrono::steady_clock::now();
-    sol.buildTrie("Input_01.txt");
+    sol.buildTrie("Input_02.txt");
     auto p=sol.findLongestCompoundWords();
      string first=p.first;
      string second=p.second;
